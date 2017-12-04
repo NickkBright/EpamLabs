@@ -23,13 +23,13 @@ public class TrainTest {
     public void searchMilan() throws InterruptedException {
         driver.get("https://www.italiarail.com/");
 
-        WebElement searchInput = driver.findElement(By.id("#edit-keys"));
+        WebElement searchInput = driver.findElement(By.id("edit-keys"));
         searchInput.sendKeys("Milan");
-        searchInput.submit();
-        WebElement results = driver.findElement(By.linkText("Search results"));
-        Thread.sleep(2000);  // Let the user actually see something!
+        searchInput.submit();   
+        WebElement results = driver.findElement(By.linkText("Train from Milan Malpensa Airport to Milan"));
+        Thread.sleep(2000);
         System.out.println(results.getText());
-        Assert.assertEquals(results.getText(), "Search results");
+        Assert.assertEquals(results.getText(), "Train from Milan Malpensa Airport to Milan");
     }
 
     @Test
@@ -37,7 +37,7 @@ public class TrainTest {
         driver.get("https://www.italiarail.com/");
 
         WebElement fromInput = driver.findElement(By.name("faresearch_route-origin"));
-        fromInput.sendKeys("Rome    ");
+        fromInput.sendKeys("Rome");
         Thread.sleep(1000);
 
         WebElement toInput = driver.findElement(By.name("faresearch_route-destination"));
@@ -49,12 +49,6 @@ public class TrainTest {
         WebElement dateInput = driver.findElement(By.linkText("12"));
         dateInput.click();
         Thread.sleep(1000);
-
-        WebElement ticketMenu = driver.findElement(By.className("input_border passenger_toggle passengers_toggle_active"));
-        ticketMenu.click();
-        WebElement passengerCounter = driver.findElement(By.className("ui-icon ui-icon-triangle-1-n"));
-        passengerCounter.click();
-
 
         driver.findElement(By.id("submit")).submit();
 
