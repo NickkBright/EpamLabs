@@ -3,18 +3,18 @@ package com.nickkbright.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class HomePage {
-    WebDriver driver;
+public class HomePage extends AbstractPage {
+    private final String URL = "https://www.italiarail.com/";
 
     By fromInput = By.name("faresearch_route-origin");
     By toInput = By.name("faresearch_route-destination");
     By calendarInput = By.name("faresearch_route-departure_date");
-    By dateInput = By.linkText("12");
+    By dateInput = By.linkText("23");
     By submitBtn = By.id("submit");
     By searchInput = By.id("edit-keys");
 
     public HomePage (WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public void sendFromInput() {
@@ -35,5 +35,10 @@ public class HomePage {
     }
     public void searchSubmit() {
         driver.findElement(searchInput).submit();
+    }
+
+    @Override
+    public void openPage () {
+        driver.navigate().to(URL);
     }
 }

@@ -24,11 +24,11 @@ public class SearchTest {
 
     @Test
     public void searchMilan() throws InterruptedException{
-        driver.get("https://www.italiarail.com/");
+        homepage.openPage();
         homepage.sendSearchInput();
-        Thread.sleep(2000);
+        Thread.sleep(1500);
         homepage.searchSubmit();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         WebElement results = driver.findElement(By.linkText("Train from Milan Malpensa Airport to Milan"));
         System.out.println(results.getText());
         Assert.assertEquals(results.getText(), "Train from Milan Malpensa Airport to Milan");

@@ -26,14 +26,16 @@ public class TicketTest {
 
     @Test
     public void searchMilan() throws InterruptedException{
-        driver.get("https://www.italiarail.com/");
+        homepage.openPage();
         homepage.sendFromInput();
         Thread.sleep(1000);
         homepage.sendToInput();
         Thread.sleep(1000);
         homepage.setDate();
-        homepage.ticketSubmit();
         Thread.sleep(1000);
+        homepage.ticketSubmit();
+
+
         List<WebElement> trains = driver.findElements(By.className("soln-container"));
         Thread.sleep(1000);
         System.out.println(trains.size());
