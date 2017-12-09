@@ -25,7 +25,7 @@ public class TicketTest {
     }
 
     @Test
-    public void searchMilan() throws InterruptedException{
+    public void searchTickets() throws InterruptedException{
         homepage.openPage();
         homepage.sendFromInput();
         Thread.sleep(1000);
