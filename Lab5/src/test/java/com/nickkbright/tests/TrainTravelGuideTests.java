@@ -14,8 +14,7 @@ import org.testng.annotations.Test;
 
 
 public class TrainTravelGuideTests {
-    private final String HEADER_XPATH_ANCHOR = "/html/body/div[1]/div[2]/div/section/div/article/div/div/h3[2]";
-    private final String HEADER_XPATH_INFO = "/html/body/div[1]/div[2]/h1";
+
     private WebDriver driver;
     private TrainTravelGuidePage guidepage;
 
@@ -31,7 +30,7 @@ public class TrainTravelGuideTests {
         Thread.sleep(2000);
         guidepage.clickAnchor();
         Thread.sleep(2000);
-        WebElement header = driver.findElement(By.xpath(HEADER_XPATH_ANCHOR));
+        WebElement header = driver.findElement(By.xpath(guidepage.getHeaderAnchorXpath()));
         System.out.println(header.getText());
         Assert.assertEquals(header.getText(), "Should I purchase a rail pass or city to city tickets?");
     }
@@ -42,7 +41,7 @@ public class TrainTravelGuideTests {
         Thread.sleep(2000);
         guidepage.clickShippingInfo();
         Thread.sleep(2000);
-        WebElement header = driver.findElement(By.xpath(HEADER_XPATH_INFO));
+        WebElement header = driver.findElement(By.xpath(guidepage.getHeaderInfo()));
         System.out.println(header.getText());
         Assert.assertEquals(header.getText(), "Shipping Information");
     }
@@ -55,7 +54,7 @@ public class TrainTravelGuideTests {
         Thread.sleep(2000);
         guidepage.clickBicycleInfo();
         Thread.sleep(2000);
-        WebElement header = driver.findElement(By.xpath(HEADER_XPATH_INFO));
+        WebElement header = driver.findElement(By.xpath(guidepage.getHeaderInfo()));
         System.out.println(header.getText());
         Assert.assertEquals(header.getText(), "Bicycles on Trains in Italy");
     }

@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class DealsPage extends AbstractPage{
+    private final String headerXPATH = "/html/body/div[1]/div[2]/h1";
     private final String URL = "https://www.italiarail.com/italiapass";
     private final String XPATH = "/html/body/div[1]/div[2]/div/section/div/article/div/div/div[2]/div/div[2]/div[1]/div/div/div/a";
 
@@ -27,6 +28,10 @@ public class DealsPage extends AbstractPage{
 
     public void clickItaliaPass () {
         driver.findElement(ItaliaPass).click();
+    }
+
+    public String getHeaderXPATH() {
+        return headerXPATH;
     }
 
     @Override

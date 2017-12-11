@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 
 public class DealsTests {
-    private final String headerXPATH = "/html/body/div[1]/div[2]/h1";
+
     private WebDriver driver;
     private DealsPage dealspage;
 
@@ -30,7 +30,7 @@ public class DealsTests {
         dealspage.openPage();
         dealspage.clickBaggage();
         Thread.sleep(3000);
-        WebElement header = driver.findElement(By.xpath(headerXPATH));
+        WebElement header = driver.findElement(By.xpath(dealspage.getHeaderXPATH()));
         Thread.sleep(1000);
         System.out.println(header.getText());
         Assert.assertEquals(header.getText(), "Baggage Service in Italy");
@@ -41,7 +41,7 @@ public class DealsTests {
         dealspage.openPage();
         dealspage.clickPrivateGuides();
         Thread.sleep(3000);
-        WebElement header = driver.findElement(By.xpath(headerXPATH));
+        WebElement header = driver.findElement(By.xpath(dealspage.getHeaderXPATH()));
         Thread.sleep(1000);
         System.out.println(header.getText());
         Assert.assertEquals(header.getText(), "Private Guides in Italy");
@@ -55,7 +55,7 @@ public class DealsTests {
         Thread.sleep(1000);
         dealspage.clickItaliaPass();
         Thread.sleep(3000);
-        WebElement header = driver.findElement(By.xpath(headerXPATH));
+        WebElement header = driver.findElement(By.xpath(dealspage.getHeaderXPATH()));
         Thread.sleep(1000);
         System.out.println(header.getText());
         Assert.assertEquals(header.getText(), "ItaliaPass Program");
