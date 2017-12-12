@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test-Listeners">
+
+    <listeners>
+        <listener class-name="com.nickkbright.listener.Listener"></listener>
+    </listeners>
+
+    <test name="HomePageTests">
+
+        <classes>
+            <class name="com.nickkbright.tests.HomePageTests" />
+        </classes>
+
+    </test>
+    <test name="DealsTests">
+
+        <classes>
+            <class name="com.nickkbright.tests.DealsTests" />
+        </classes>
+
+    </test>
+    <test name="TrainTravelGuideTests">
+
+        <classes>
+            <class name="com.nickkbright.tests.TrainTravelGuideTests" />
+        </classes>
+
+    </test>
+
+</suite>
