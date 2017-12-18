@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 
-public class HomePageTests {
+public class HomePageTests extends BaseTest{
     private WebDriver driver;
     private HomePage homepage;
 
@@ -51,9 +51,9 @@ public class HomePageTests {
         Thread.sleep(1500);
         homepage.searchSubmit();
         Thread.sleep(1000);
-        WebElement results = driver.findElement(By.linkText("Train from Milan Malpensa Airport to Milan"));
+        WebElement results = driver.findElement(By.linkText(homepage.getSearchMilanResults()));
         System.out.println(results.getText());
-        Assert.assertEquals(results.getText(), "Train from Milan Malpensa Airport to Milan");
+        Assert.assertEquals(results.getText(), homepage.getSearchMilanResults());
     }
 
     @Test
@@ -64,7 +64,7 @@ public class HomePageTests {
         homepage.selectCurrency();
         Thread.sleep(1000);
         homepage.changeCurrency();
-        WebElement price = driver.findElement(By.id("rome_to_florence_price"));
+        WebElement price = driver.findElement(By.id(homepage.getPriceID()));
         System.out.println(price.getText());
         Assert.assertEquals(price.getText(), "£16");
     }

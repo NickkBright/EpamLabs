@@ -7,6 +7,8 @@ public class HomePage extends AbstractPage {
     private final String URL = "https://www.italiarail.com/";
     private final String ButtonXPATH = "/html/body/div[12]/div[3]/div/button[1]";
     private final String SelectXPATH = "//*[@id=\"currency_select\"]/option[3]";
+    private final String SearchResults = "Train from Milan Malpensa Airport to Milan";
+    private final String PriceID = "rome_to_florence_price";
 
     By fromInput = By.name("faresearch_route-origin");
     By toInput = By.name("faresearch_route-destination");
@@ -32,6 +34,14 @@ public class HomePage extends AbstractPage {
         driver.findElement(calendarInput).click();
         driver.findElement(dateInput).click();
     }
+    public String getSearchMilanResults() {
+        return SearchResults;
+    }
+
+    public String getPriceID() {
+        return PriceID;
+    }
+
     public void ticketSubmit() {
         driver.findElement(submitBtn).submit();
     }

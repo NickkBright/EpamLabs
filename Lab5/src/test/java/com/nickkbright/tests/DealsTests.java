@@ -13,7 +13,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 
-public class DealsTests {
+public class DealsTests extends BaseTest{
 
     private WebDriver driver;
     private DealsPage dealspage;

@@ -3,17 +3,17 @@ package com.nickkbright.tests;
 
 import com.nickkbright.driver.DriverSetup;
 import com.nickkbright.pages.TrainTravelGuidePage;
-import org.junit.After;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 
 
-public class TrainTravelGuideTests {
+public class TrainTravelGuideTests extends BaseTest{
 
     private WebDriver driver;
     private TrainTravelGuidePage guidepage;
@@ -59,7 +59,7 @@ public class TrainTravelGuideTests {
         Assert.assertEquals(header.getText(), "Bicycles on Trains in Italy");
     }
 
-    @After
+    @AfterClass
     public void tearDown(){
         DriverSetup.closeDriver();
     }

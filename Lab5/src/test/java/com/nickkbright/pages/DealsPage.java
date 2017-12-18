@@ -6,11 +6,11 @@ import org.openqa.selenium.WebDriver;
 public class DealsPage extends AbstractPage{
     private final String headerXPATH = "/html/body/div[1]/div[2]/h1";
     private final String URL = "https://www.italiarail.com/italiapass";
-    private final String XPATH = "/html/body/div[1]/div[2]/div/section/div/article/div/div/div[2]/div/div[2]/div[1]/div/div/div/a";
+    private final String italiaPassXPATH = "//div[@class='cc_link']/a[@href='/italiapass/italiapass-program']";
 
     By baggageService = By.linkText("Baggage Service in Italy");
     By privateGuides = By.linkText("Private Guides in Italy");
-    By ItaliaPass = By.xpath(XPATH);
+    By ItaliaPass = By.xpath(italiaPassXPATH);
 
 
 
